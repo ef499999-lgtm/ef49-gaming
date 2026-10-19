@@ -1,74 +1,35 @@
-# EF49 — Site Review & Improvement Checklist
+# EF49 — Review Notes
 
 Live site: https://ef499999-lgtm.github.io/ef49-gaming/
 
-## What works
+> Correction: the first version of this file was written from the page's text only, before
+> the JavaScript ran. A few items in it (copyright year, "no results" message, image fallback,
+> game links) were already working in the code. This version reflects the real files.
 
-- Strong identity: "Play big. Live the game." with a silver and electric-blue logo on a dark (`#05070d`) theme
-- Simple structure: Games, About, and one clear call to action
-- Good basics: meta description, theme color, mobile viewport tag, smooth in-page links
-- Useful core idea: genre filters plus a search box for a game library
+## Already working
 
-## Fixes
+- Copyright year is generated in `script.js`
+- "No results" message, game links, and a title-card fallback for broken images
+- Search plus genre filtering, responsive layout, meta description and theme color
 
-- [ ] **Genre mismatch.** The hero says "10+ genres" but the filter shows only 6 (Shooters, Adventure, RPG, Survival, Racing, Strategy). Add more filters (Sports, Puzzle, Horror, Simulation, Fighting) or change the number.
-- [ ] **Copyright line.** It reads "© EF49" with no year. Add the year, or generate it with `new Date().getFullYear()`.
-- [ ] **Vague stat.** Replace "∞ Ways to play" with something concrete (e.g. "6 genres", "Solo + co-op").
-- [ ] **Steam image hotlinking.** Artwork loads from Steam's CDN and can break. Add a fallback placeholder for failed loads and consider hosting some images locally.
-- [ ] **Game card links.** Make sure each game links somewhere (its Steam page or a details view).
-- [ ] **Repeated text.** "100 games" appears 3–4 times. Trim it.
-- [ ] **Thin About section.** Add one or two sentences on what makes EF49 different from browsing Steam.
-- [ ] **Search and filter polish.** Add a friendly "no results" message and clearly highlight the active filter.
+## Done in this update
 
-## Bigger ideas
+- [x] **Genre filters** are now built from the game list: all 20 genres, each with a count (was 6 hard-coded buttons)
+- [x] **Hero stats** (games and genres) come from the data, so they can't drift out of sync
+- [x] **"∞ Ways to play"** replaced with "FREE · to browse"
+- [x] **Repeated "100 games"** trimmed from the hero text, button, and subtitle
+- [x] **Minecraft card** now shows its title card (before, it showed an empty gradient)
+- [x] **Broken Steam images** fall back to the title card via one listener (no inline `onerror`)
+- [x] **"No results"** message now names the search and genre, with a "Clear search & filters" button
+- [x] **Open Graph and Twitter tags** plus a favicon, for link previews and the browser tab
+- [x] **About section** now explains what EF49 is (no accounts, hand-picked, links to store pages)
+- [x] **Accessibility:** visible focus outlines, `aria-pressed` on filters, descriptive link labels, larger tiny text, better contrast, reduced-motion support
+- [x] **Smaller fixes:** fonts loaded with `<link>` instead of `@import` (faster), game titles HTML-escaped, `noscript` message, year fallback without JS
 
-- [ ] Sorting (popular, newest, A–Z)
-- [ ] "Random game" button
-- [ ] Favorites list saved in `localStorage`
-- [ ] Open Graph tags (`og:title`, `og:description`, `og:image`) so links look good on Discord and WhatsApp
-- [ ] Accessibility pass: alt text on the logo and game images, enough contrast for light text on the dark background, keyboard-friendly filters
+## Ideas for later
 
-## Quick snippets
-
-### Auto-updating copyright year
-
-```html
-<p>© <span id="year"></span> EF49. Made for gamers.</p>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-```
-
-### Fallback for broken game images
-
-```js
-document.querySelectorAll(".game-card img").forEach((img) => {
-  img.addEventListener("error", () => {
-    img.src = "assets/placeholder.png";
-  });
-});
-```
-
-### Open Graph tags (put inside `<head>`)
-
-```html
-<meta property="og:title" content="EF49 — Level Up Your Game" />
-<meta property="og:description" content="Discover 100 popular PC games, browse genres, and jump into your next adventure." />
-<meta property="og:image" content="https://ef499999-lgtm.github.io/ef49-gaming/assets/ef49-logo.png" />
-<meta property="og:type" content="website" />
-```
-
-### "No results" message
-
-```js
-const visible = [...document.querySelectorAll(".game-card")].filter(
-  (card) => card.style.display !== "none"
-);
-document.getElementById("no-results").hidden = visible.length > 0;
-```
-
-Adjust the class names and IDs (`.game-card`, `#no-results`) to match your actual code.
-
-## Note
-
-This review was based on the page's text content only. Visual design, animations, and the game cards themselves were not evaluated.
+- [ ] Sort options (A–Z, genre) and a "random game" button
+- [ ] Favorites saved in `localStorage`
+- [ ] Host a few cover images yourself in case the Steam CDN changes
+- [ ] A wide `og:image` (1200×630) instead of the logo, for bigger link previews
+- [ ] Add more games or a short "why we picked it" line per game

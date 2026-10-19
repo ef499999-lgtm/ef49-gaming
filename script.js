@@ -3,39 +3,100 @@ const grid = document.getElementById('gameGrid');
 const search = document.getElementById('search');
 const count = document.getElementById('count');
 const emptyState = document.getElementById('emptyState');
+const emptyMessage = document.getElementById('emptyMessage');
+const filtersEl = document.getElementById('filters');
 let activeGenre = 'All';
+
+const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]
+));
 
 function imageUrl(game) {
   return game.id ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${game.id}/header.jpg` : '';
 }
+function gameUrl(game) {
+  return game.id ? `https://store.steampowered.com/app/${game.id}/` : 'https://www.minecraft.net/';
+}
+
+/* Genres and counts are built from the game list, so the filters, the
+   hero stats and the library can never disagree with each other. */
+const genreCounts = games.reduce((totals, game) => {
+  totals[game.genre] = (totals[game.genre] || 0) + 1;
+  return totals;
+}, {});
+const genres = Object.keys(genreCounts).sort((a, b) => genreCounts[b] - genreCounts[a] || a.localeCompare(b));
+
+function buildFilters() {
+  const button = (genre, label, total, active) =>
+    `<button type="button" class="filter${active ? ' active' : ''}" data-genre="${escapeHtml(genre)}" aria-pressed="${active}">${escapeHtml(label)} <small>${total}</small></button>`;
+  filtersEl.innerHTML = button('All', 'All games', games.length, true) +
+    genres.map(genre => button(genre, genre, genreCounts[genre], false)).join('');
+}
+
+function syncFilterButtons() {
+  document.querySelectorAll('.filter').forEach(item => {
+    const isActive = item.dataset.genre === activeGenre;
+    item.classList.toggle('active', isActive);
+    item.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
 function renderGames() {
   const query = search.value.trim().toLowerCase();
   const filtered = games.filter(game => (activeGenre === 'All' || game.genre === activeGenre) &&
     (game.title.toLowerCase().includes(query) || game.genre.toLowerCase().includes(query)));
   count.textContent = filtered.length;
   emptyState.hidden = filtered.length > 0;
+  if (!filtered.length) {
+    emptyMessage.textContent = query
+      ? `No games found for “${search.value.trim()}”${activeGenre === 'All' ? '' : ` in ${activeGenre}`}.`
+      : `No games found in ${activeGenre}.`;
+  }
   grid.innerHTML = filtered.map((game, index) => {
     const img = imageUrl(game);
-    const steamLink = game.id ? `https://store.steampowered.com/app/${game.id}/` : 'https://www.minecraft.net/';
-    return `<article class="game-card" style="animation-delay:${Math.min(index*15,250)}ms">
+    const title = escapeHtml(game.title);
+    const genre = escapeHtml(game.genre);
+    // Games without artwork (e.g. Minecraft) start with the title-card fallback.
+    return `<article class="game-card${img ? '' : ' no-image'}" style="animation-delay:${Math.min(index * 15, 250)}ms">
       <div class="cover-wrap">
-        ${img ? `<img class="cover" loading="lazy" src="${img}" alt="${game.title} cover art" onerror="this.closest('.game-card').classList.add('no-image')">` : ''}
-        <div class="cover-fallback">${game.title}</div>
-        <span class="genre-pill">${game.genre}</span>
+        ${img ? `<img class="cover" loading="lazy" decoding="async" width="460" height="215" referrerpolicy="no-referrer" src="${img}" alt="${title} cover art">` : ''}
+        <div class="cover-fallback">${title}</div>
+        <span class="genre-pill">${genre}</span>
       </div>
-      <div class="card-info"><h3 class="card-title">${game.title}</h3>
-        <div class="card-bottom"><span>EF49 PICK</span><a href="${steamLink}" target="_blank" rel="noopener noreferrer">VIEW GAME ↗</a></div>
+      <div class="card-info"><h3 class="card-title">${title}</h3>
+        <div class="card-bottom"><span>EF49 PICK</span><a href="${gameUrl(game)}" target="_blank" rel="noopener noreferrer" aria-label="View ${title} (opens in a new tab)">VIEW GAME ↗</a></div>
       </div>
     </article>`;
   }).join('');
 }
-document.getElementById('filters').addEventListener('click', event => {
+
+/* If a cover image fails to load (Steam CDN down, blocked, offline),
+   swap it for the title card. 'error' doesn't bubble, so listen in the capture phase. */
+grid.addEventListener('error', event => {
+  const img = event.target;
+  if (img.classList && img.classList.contains('cover')) {
+    img.closest('.game-card').classList.add('no-image');
+  }
+}, true);
+
+filtersEl.addEventListener('click', event => {
   const button = event.target.closest('button[data-genre]');
   if (!button) return;
   activeGenre = button.dataset.genre;
-  document.querySelectorAll('.filter').forEach(item => item.classList.toggle('active', item === button));
+  syncFilterButtons();
   renderGames();
 });
 search.addEventListener('input', renderGames);
+document.getElementById('clearFilters').addEventListener('click', () => {
+  search.value = '';
+  activeGenre = 'All';
+  syncFilterButtons();
+  renderGames();
+  search.focus();
+});
+
+document.getElementById('statGames').textContent = games.length;
+document.getElementById('statGenres').textContent = genres.length;
 document.getElementById('year').textContent = new Date().getFullYear();
+buildFilters();
 renderGames();

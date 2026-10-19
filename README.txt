@@ -1,18 +1,13 @@
-EF49 GAMING WEBSITE
+EF49 GAMING — UPGRADED VERSION
 
-Preview locally:
-1. Extract this ZIP.
-2. Open index.html in your browser.
+Preview: Extract this ZIP and open index.html in your browser.
 
-Publish free with GitHub Pages:
-1. Go to https://github.com and open your repository (or create a public repository).
-2. Upload index.html, style.css, script.js, and the assets folder.
-3. Open Settings > Pages.
-4. Under Build and deployment, choose Deploy from a branch.
-5. Choose branch main and folder / (root), then Save.
-6. Your site will appear at https://YOUR-USERNAME.github.io/REPOSITORY-NAME/
+Update your live GitHub Pages website:
+1. Open your existing ef49-gaming repository.
+2. Upload index.html, style.css, script.js, and the assets folder from this ZIP.
+3. Commit changes, replacing the old versions when asked.
+4. Wait a few minutes and refresh your published website.
 
-Customize:
-- Change the email link in index.html (currently hello@example.com) to your real contact address.
-- Replace the sample game links if you want different games.
-- Edit colors and layout in style.css.
+Instagram is linked to https://www.instagram.com/greathullomh/
+YouTube is a placeholder until you create/provide your channel URL.
+The game section currently includes Minecraft plus sample games. Tell ChatGPT which other games you meant by “F” to personalize the list.

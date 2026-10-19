@@ -1,13 +1,20 @@
-EF49 GAMING — UPGRADED VERSION
+EF49 WEBSITE — QUICK SETUP
 
-Preview: Extract this ZIP and open index.html in your browser.
+Files:
+- index.html: website structure
+- style.css: black + electric-blue design and responsive layout
+- script.js: 100-game library, search, genre filters, game links
+- assets/ef49-logo.png: EF49 logo
 
-Update your live GitHub Pages website:
-1. Open your existing ef49-gaming repository.
-2. Upload index.html, style.css, script.js, and the assets folder from this ZIP.
-3. Commit changes, replacing the old versions when asked.
-4. Wait a few minutes and refresh your published website.
+HOW TO PUT IT ON YOUR GITHUB PAGES SITE
+1. Open your GitHub repository named ef49-gaming.
+2. Upload/replace index.html, style.css, and script.js in the repository root.
+3. Upload the assets folder and ef49-logo.png inside it.
+4. Commit the changes.
+5. Open Settings > Pages and make sure the publishing source is branch main and folder /(root).
+6. Visit your published site and refresh. GitHub Pages can take a few minutes to update.
 
-Instagram is linked to https://www.instagram.com/greathullomh/
-YouTube is a placeholder until you create/provide your channel URL.
-The game section currently includes Minecraft plus sample games. Tell ChatGPT which other games you meant by “F” to personalize the list.
+NOTE:
+- Game cover art is loaded from Steam's public image CDN and requires internet access.
+- Minecraft uses a fallback title card because it is not listed as a Steam game.
+- The website is a game discovery catalog; it does not host or distribute the games.

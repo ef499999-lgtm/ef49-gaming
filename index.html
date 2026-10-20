@@ -1,86 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05070d">
-  <meta name="description" content="EF49 — discover 100 popular PC games, browse genres, and jump into your next adventure.">
-  <title>EF49 — Level Up Your Game</title>
-
-  <!-- Link preview (Discord, WhatsApp, X, etc.) -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="EF49">
-  <meta property="og:title" content="EF49 — Level Up Your Game">
-  <meta property="og:description" content="Discover 100 popular PC games, browse genres, and jump into your next adventure.">
-  <meta property="og:url" content="https://ef499999-lgtm.github.io/ef49-gaming/">
-  <meta property="og:image" content="https://ef499999-lgtm.github.io/ef49-gaming/assets/ef49-logo.png">
-  <meta property="og:image:alt" content="EF49 — silver and electric blue logo">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EF49 — Level Up Your Game">
-  <meta name="twitter:description" content="Discover 100 popular PC games, browse genres, and jump into your next adventure.">
-  <meta name="twitter:image" content="https://ef499999-lgtm.github.io/ef49-gaming/assets/ef49-logo.png">
-
+  <meta name="description" content="EF49 — play 50 free browser games. Discover arcade, puzzle, action and classic games on desktop or mobile.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="EF49"><meta property="og:title" content="EF49 — Premium Browser Gaming"><meta property="og:description" content="Play free browser games. No downloads. Just play."><meta property="og:url" content="https://ef499999-lgtm.github.io/ef49-gaming/"><meta property="og:image" content="https://ef499999-lgtm.github.io/ef49-gaming/assets/ef49-logo.png">
+  <title>EF49 — Premium Browser Gaming</title>
   <link rel="icon" type="image/png" href="assets/ef49-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
-  <div class="top-glow"></div>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="EF49 home"><img src="assets/ef49-logo.png" alt="EF49 logo"><span>EF49</span></a>
-    <nav><a href="#games">Games</a><a href="#about">About</a><a class="nav-cta" href="#games">Explore games ↗</a></nav>
+  <header class="site-header"><a class="brand" href="#top" aria-label="EF49 home"><img src="assets/ef49-logo.png" alt=""><span>EF<span class="blue">49</span></span></a>
+    <nav><a class="nav-active" href="#top">HOME</a><a href="#games">GAMES</a><a href="#categories">CATEGORIES</a><a href="#about">ABOUT</a></nav>
+    <label class="header-search"><span>⌕</span><input id="search" type="search" placeholder="Search games..." aria-label="Search games"></label>
+    <a class="header-icon" href="#games" aria-label="Browse games">🎮</a>
   </header>
-
   <main>
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT LEVEL STARTS HERE</p>
-        <h1>PLAY BIG.<br><span>LIVE THE GAME.</span></h1>
-        <p class="hero-text">Discover your next obsession. Browse popular PC games, find your genre, and jump into something legendary.</p>
-        <div class="hero-actions"><a class="button primary" href="#games">Explore games <span>↘</span></a><a class="button secondary" href="#about">About EF49</a></div>
-        <div class="hero-stats"><div><strong id="statGames">100</strong><span>GAMES TO EXPLORE</span></div><i></i><div><strong id="statGenres">20</strong><span>GENRES</span></div><i></i><div><strong>FREE</strong><span>TO BROWSE</span></div></div>
-      </div>
-      <div class="hero-art">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="hero-logo-frame"><img src="assets/ef49-logo.png" alt="EF49 — silver and electric blue logo"></div>
-        <div class="floating-tag tag-top">READY PLAYER 01</div><div class="floating-tag tag-bottom">EST. FOR GAMERS <b>✦</b></div>
-        <div class="hero-cross cross-one">+</div><div class="hero-cross cross-two">+</div>
-      </div>
+      <div class="hero-bg"></div><div class="hero-copy"><p class="eyebrow">PLAY&nbsp; · &nbsp;EXPLORE&nbsp; · &nbsp;ENJOY</p><h1>WELCOME TO<br><span>EF49</span></h1>
+        <h2>Your ultimate destination for free online games.</h2><p class="hero-text">No downloads. No limits. Just pure fun.</p>
+        <div class="hero-actions"><a class="button primary" href="#games">▶ &nbsp; PLAY NOW</a><a class="button secondary" href="#games">BROWSE GAMES</a></div>
+        <div class="hero-stats"><div><strong>50</strong><span>GAMES</span></div><i></i><div><strong id="statCategories">4</strong><span>CATEGORIES</span></div><i></i><div><strong>100%</strong><span>FREE TO PLAY</span></div></div>
+      </div><div class="hero-badge"><span>EF</span><b>49</b><small>PLAY · EXPLORE · ENJOY</small></div>
     </section>
-
-    <section class="featured-strip">
-      <span>BUILT FOR GAMERS</span><b>✦</b><span>DISCOVER YOUR NEXT FAVORITE</span><b>✦</b><span>WELCOME TO EF49</span>
+    <section class="category-section" id="categories"><button class="category active" data-category="All"><b>▦</b><span>All Games</span><small>50</small></button><button class="category" data-category="Arcade"><b>✦</b><span>Arcade</span></button><button class="category" data-category="Puzzle"><b>◇</b><span>Puzzle</span></button><button class="category" data-category="Action"><b>⌖</b><span>Action</span></button><button class="category" data-category="Classic"><b>♟</b><span>Classic</span></button></section>
+    <section class="games-section" id="games"><div class="section-heading"><div><p class="eyebrow">THE EF49 LIBRARY</p><h2>FEATURED <span>GAMES</span></h2><p class="muted">Pick a game and jump straight into the action.</p></div><div class="game-count"><strong id="count">50</strong><span>GAMES</span></div></div>
+      <div class="results-row"><p id="resultLabel">Showing all 50 games</p><label>Sort <select id="sort"><option value="popular">Popular</option><option value="az">A–Z</option></select></label></div>
+      <div class="game-grid" id="gameGrid" aria-live="polite"></div><div class="empty-state" id="emptyState" hidden>No games found. Try another search or category.</div>
+      <p class="source-note">Games are hosted by their open-source publisher and open in a new tab. EF49 does not claim ownership of third-party games.</p>
     </section>
-
-    <section class="games-section" id="games">
-      <div class="section-heading"><div><p class="eyebrow">THE GAME LIBRARY</p><h2>Find your <span>next game.</span></h2><p class="section-subtitle">Different worlds. One place to explore.</p></div><div class="game-count"><strong id="count">100</strong><span>GAMES</span></div></div>
-      <div class="controls">
-        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search games or genres..." aria-label="Search games"></label>
-        <div class="filters" id="filters" role="group" aria-label="Filter by genre"></div>
-      </div>
-      <div class="game-grid" id="gameGrid" aria-live="polite"></div>
-      <noscript><p class="noscript-note">The game library needs JavaScript. Please enable it to browse the games.</p></noscript>
-      <div class="empty-state" id="emptyState" hidden>
-        <p id="emptyMessage">No games found. Try another search.</p>
-        <button type="button" class="clear-btn" id="clearFilters">Clear search &amp; filters</button>
-      </div>
-      <p class="image-note">Game artwork is loaded from Steam's public store image CDN when available. If an image can't load, a title card is shown instead.</p>
-    </section>
-
-    <section class="about-section" id="about">
-      <div class="about-mark"><img src="assets/ef49-logo.png" alt="EF49 logo"></div>
-      <div>
-        <p class="eyebrow">WELCOME TO THE SQUAD</p>
-        <h2>This is <span>EF49.</span></h2>
-        <p>A gaming hub made for people who love discovering new worlds, competing with friends, and finding their next favorite game. Pick a game, explore a genre, and level up your play.</p>
-        <p>No accounts, no sign-ups: just a hand-picked library you can search and filter by genre, with every card linking straight to the game's store page. EF49 is a discovery catalog, so it never hosts or distributes the games.</p>
-        <a class="text-link" href="#games">Back to the games <span>↗</span></a>
-      </div>
-    </section>
+    <section class="about-section" id="about"><div class="about-logo">EF<span>49</span></div><div><p class="eyebrow">BUILT FOR PLAYERS</p><h2>THIS IS <span>EF49.</span></h2><p>One place for quick arcade challenges, brain teasers, action games and timeless classics. Built for desktop, tablet and mobile — no account or downloads required.</p><p class="muted">The game collection is sourced from an open-source HTML5 game project published under the MIT license. Games launch on the publisher’s website so the original game files and attribution remain intact.</p><a class="text-link" href="#games">BACK TO THE GAMES ↑</a></div></section>
   </main>
-  <footer><a class="footer-brand" href="#">EF<span>49</span></a><span>© <span id="year">2026</span> EF49. Made for gamers.</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">BACK TO TOP ↑</a></footer>
+  <footer><a class="footer-brand" href="#top">EF<span>49</span></a><span>© <span id="year">2026</span> EF49. Made for gamers.</span><a href="#top">PLAY · EXPLORE · ENJOY</a></footer>
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>

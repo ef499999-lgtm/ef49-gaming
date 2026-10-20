@@ -1,102 +1,74 @@
-const games = [{"title": "Counter-Strike 2", "id": 730, "genre": "Shooter"}, {"title": "Dota 2", "id": 570, "genre": "MOBA"}, {"title": "PUBG: BATTLEGROUNDS", "id": 578080, "genre": "Battle Royale"}, {"title": "Apex Legends", "id": 1172470, "genre": "Battle Royale"}, {"title": "Team Fortress 2", "id": 440, "genre": "Shooter"}, {"title": "Warframe", "id": 230410, "genre": "Action"}, {"title": "Destiny 2", "id": 1085660, "genre": "Shooter"}, {"title": "Grand Theft Auto V", "id": 271590, "genre": "Open World"}, {"title": "Red Dead Redemption 2", "id": 1174180, "genre": "Open World"}, {"title": "Cyberpunk 2077", "id": 1091500, "genre": "RPG"}, {"title": "The Witcher 3: Wild Hunt", "id": 292030, "genre": "RPG"}, {"title": "Elden Ring", "id": 1245620, "genre": "RPG"}, {"title": "Baldur's Gate 3", "id": 1086940, "genre": "RPG"}, {"title": "Hogwarts Legacy", "id": 990080, "genre": "Adventure"}, {"title": "Hades", "id": 1145360, "genre": "Roguelike"}, {"title": "Hades II", "id": 1145350, "genre": "Roguelike"}, {"title": "Stardew Valley", "id": 413150, "genre": "Simulation"}, {"title": "Terraria", "id": 105600, "genre": "Sandbox"}, {"title": "Minecraft", "id": 0, "genre": "Sandbox"}, {"title": "Among Us", "id": 945360, "genre": "Party"}, {"title": "Fall Guys", "id": 1097150, "genre": "Party"}, {"title": "Rocket League", "id": 252950, "genre": "Sports"}, {"title": "EA SPORTS FC 25", "id": 2669320, "genre": "Sports"}, {"title": "NBA 2K25", "id": 2878980, "genre": "Sports"}, {"title": "Forza Horizon 5", "id": 1551360, "genre": "Racing"}, {"title": "Need for Speed Heat", "id": 1222680, "genre": "Racing"}, {"title": "Assetto Corsa", "id": 244210, "genre": "Racing"}, {"title": "F1 24", "id": 2488620, "genre": "Racing"}, {"title": "Euro Truck Simulator 2", "id": 227300, "genre": "Simulation"}, {"title": "Microsoft Flight Simulator", "id": 1250410, "genre": "Simulation"}, {"title": "The Sims 4", "id": 1222670, "genre": "Simulation"}, {"title": "Cities: Skylines", "id": 255710, "genre": "Simulation"}, {"title": "Planet Zoo", "id": 703080, "genre": "Simulation"}, {"title": "ARK: Survival Evolved", "id": 346110, "genre": "Survival"}, {"title": "Rust", "id": 252490, "genre": "Survival"}, {"title": "DayZ", "id": 221100, "genre": "Survival"}, {"title": "7 Days to Die", "id": 251570, "genre": "Survival"}, {"title": "The Forest", "id": 242760, "genre": "Survival"}, {"title": "Sons of the Forest", "id": 1326470, "genre": "Survival"}, {"title": "Left 4 Dead 2", "id": 550, "genre": "Shooter"}, {"title": "Back 4 Blood", "id": 924970, "genre": "Shooter"}, {"title": "DOOM Eternal", "id": 782330, "genre": "Shooter"}, {"title": "Halo Infinite", "id": 1240440, "genre": "Shooter"}, {"title": "Call of Duty: Warzone", "id": 1962663, "genre": "Shooter"}, {"title": "Overwatch 2", "id": 2357570, "genre": "Shooter"}, {"title": "Rainbow Six Siege", "id": 359550, "genre": "Shooter"}, {"title": "Battlefield 2042", "id": 1517290, "genre": "Shooter"}, {"title": "Borderlands 3", "id": 397540, "genre": "Shooter"}, {"title": "Far Cry 6", "id": 2369390, "genre": "Open World"}, {"title": "Assassin's Creed Valhalla", "id": 2208920, "genre": "Adventure"}, {"title": "God of War", "id": 1593500, "genre": "Adventure"}, {"title": "Marvel's Spider-Man Remastered", "id": 1817070, "genre": "Adventure"}, {"title": "Horizon Zero Dawn", "id": 1151640, "genre": "Adventure"}, {"title": "Ghost of Tsushima DIRECTOR'S CUT", "id": 2215430, "genre": "Adventure"}, {"title": "Uncharted: Legacy of Thieves Collection", "id": 1659420, "genre": "Adventure"}, {"title": "Tomb Raider", "id": 203160, "genre": "Adventure"}, {"title": "Resident Evil 4", "id": 2050650, "genre": "Horror"}, {"title": "Resident Evil Village", "id": 1196590, "genre": "Horror"}, {"title": "Dead by Daylight", "id": 381210, "genre": "Horror"}, {"title": "Phasmophobia", "id": 739630, "genre": "Horror"}, {"title": "Lethal Company", "id": 1966720, "genre": "Horror"}, {"title": "The Outlast Trials", "id": 1304930, "genre": "Horror"}, {"title": "Five Nights at Freddy's: Security Breach", "id": 747660, "genre": "Horror"}, {"title": "Subnautica", "id": 264710, "genre": "Survival"}, {"title": "No Man's Sky", "id": 275850, "genre": "Open World"}, {"title": "Sea of Thieves", "id": 1172620, "genre": "Adventure"}, {"title": "Palworld", "id": 1623730, "genre": "Survival"}, {"title": "Enshrouded", "id": 1203620, "genre": "Survival"}, {"title": "Valheim", "id": 892970, "genre": "Survival"}, {"title": "V Rising", "id": 1604030, "genre": "Survival"}, {"title": "Grounded", "id": 962130, "genre": "Survival"}, {"title": "Don't Starve Together", "id": 322330, "genre": "Survival"}, {"title": "Project Zomboid", "id": 108600, "genre": "Survival"}, {"title": "Factorio", "id": 427520, "genre": "Strategy"}, {"title": "Satisfactory", "id": 526870, "genre": "Simulation"}, {"title": "RimWorld", "id": 294100, "genre": "Simulation"}, {"title": "Oxygen Not Included", "id": 457140, "genre": "Simulation"}, {"title": "Civilization VI", "id": 289070, "genre": "Strategy"}, {"title": "Age of Empires IV", "id": 1466860, "genre": "Strategy"}, {"title": "Total War: WARHAMMER III", "id": 1142710, "genre": "Strategy"}, {"title": "Stellaris", "id": 281990, "genre": "Strategy"}, {"title": "Hearts of Iron IV", "id": 394360, "genre": "Strategy"}, {"title": "Crusader Kings III", "id": 1158310, "genre": "Strategy"}, {"title": "Slay the Spire", "id": 646570, "genre": "Card Game"}, {"title": "Balatro", "id": 2379780, "genre": "Card Game"}, {"title": "Vampire Survivors", "id": 1794680, "genre": "Roguelike"}, {"title": "Risk of Rain 2", "id": 632360, "genre": "Roguelike"}, {"title": "Dead Cells", "id": 588650, "genre": "Roguelike"}, {"title": "Hollow Knight", "id": 367520, "genre": "Platformer"}, {"title": "Celeste", "id": 504230, "genre": "Platformer"}, {"title": "Cuphead", "id": 268910, "genre": "Platformer"}, {"title": "Ori and the Will of the Wisps", "id": 1057090, "genre": "Platformer"}, {"title": "It Takes Two", "id": 1426210, "genre": "Co-op"}, {"title": "A Way Out", "id": 1222700, "genre": "Co-op"}, {"title": "Human: Fall Flat", "id": 477160, "genre": "Party"}, {"title": "Gang Beasts", "id": 285900, "genre": "Party"}, {"title": "Brawlhalla", "id": 291550, "genre": "Fighting"}, {"title": "Mortal Kombat 1", "id": 1971870, "genre": "Fighting"}, {"title": "Street Fighter 6", "id": 1364780, "genre": "Fighting"}, {"title": "Tekken 8", "id": 1778820, "genre": "Fighting"}];
-const grid = document.getElementById('gameGrid');
-const search = document.getElementById('search');
-const count = document.getElementById('count');
-const emptyState = document.getElementById('emptyState');
-const emptyMessage = document.getElementById('emptyMessage');
-const filtersEl = document.getElementById('filters');
-let activeGenre = 'All';
+/* EF49 game directory. External HTML5 games remain hosted by their publisher. */
+const GAME_BASE = 'https://mashukui.github.io/web-games/';
+const games = [
+ ['Ant Flap','ant-flap','Arcade','🐜','Tap to flap through the branches.'],
+ ['Ant Jump','ant-jump','Arcade','🦗','Bounce upward across springy platforms.'],
+ ['Block Drop','block-drop','Puzzle','🧊','Stack falling blocks and clear rows.'],
+ ['Breakout','breakout','Arcade','🧱','Smash bricks with paddle-and-ball action.'],
+ ['Paddle Duel','paddle-duel','Arcade','🏓','A classic paddle duel against AI.'],
+ ['Stack Tower','stack-tower','Arcade','🏗️','Stack blocks as high as you can.'],
+ ['Whack-a-Mole','whack-a-mole','Arcade','🔨','Test your reflexes in a 60-second challenge.'],
+ ['Snake','snake','Classic','🐍','Eat, grow, and avoid your own tail.'],
+ ['Tic Tac Toe','tic-tac-toe','Classic','⭕','Three in a row against AI or a friend.'],
+ ['Connect Four','connect-four','Classic','🔴','Connect four discs before your opponent.'],
+ ['2048','2048','Puzzle','🔢','Merge tiles to reach 2048.'],
+ ['Minesweeper','minesweeper','Puzzle','💣','Clear the board without hitting a mine.'],
+ ['Memory Match','memory-match','Puzzle','🃏','Flip cards and find matching pairs.'],
+ ['Star Defender','star-defender','Action','🚀','Shoot waves of enemies and survive.'],
+ ['Dino Run','dino-run','Action','🦖','Jump obstacles in an endless desert run.'],
+ ['Piano Tap','piano-tap','Arcade','🎹','Tap the right tiles before they pass.'],
+ ['Cross Road','cross-road','Arcade','🐸','Dodge traffic and hop across the river.'],
+ ['Slide Puzzle','slide-puzzle','Puzzle','🧩','Put the numbered tiles back in order.'],
+ ['Fruit Slice','fruit-slice','Action','🍉','Slice fruit and avoid the bombs.'],
+ ['Bubble Shooter','bubble-shooter','Arcade','🫧','Match bubbles and clear the board.'],
+ ['Sudoku','sudoku','Puzzle','🔟','Solve a classic number logic puzzle.'],
+ ['Merge Drop','merge-drop','Puzzle','🍉','Drop and merge matching fruit.'],
+ ['Water Sort','water-sort','Puzzle','🧪','Sort coloured liquids into tubes.'],
+ ['Slingshot','slingshot','Action','🏹','Aim, pull back, and hit the target.'],
+ ['Helix Drop','helix-drop','Action','🌀','Rotate the tower and guide the ball down.'],
+ ['Gem Match','gem-match','Puzzle','💎','Match gems and chain cascades.'],
+ ['Maze Muncher','maze-muncher','Arcade','🟡','Collect dots while avoiding ghosts.'],
+ ['Air Hockey','air-hockey','Arcade','🏒','Drag your mallet and score goals.'],
+ ['Reversi','reversi','Classic','⚪','Flip your opponent’s discs to win.'],
+ ['Battleship','battleship','Classic','🚢','Find the hidden enemy fleet.'],
+ ['Sokoban','sokoban','Puzzle','📦','Push every crate onto its target.'],
+ ['Lights Out','lights-out','Puzzle','💡','Switch off every light on the board.'],
+ ['Hanoi','hanoi','Puzzle','🗼','Move the tower one disk at a time.'],
+ ['Pipe Connect','pipe-connect','Puzzle','🔧','Rotate pipes to connect the flow.'],
+ ['Rush Hour','rush-hour','Puzzle','🚗','Move cars to clear the exit route.'],
+ ['Mahjong Link','mahjong-link','Puzzle','🀄','Pair matching tiles with a clear path.'],
+ ['Nonogram','nonogram','Puzzle','🎨','Reveal a picture using number clues.'],
+ ['Checkers','checkers','Classic','🔵','Capture pieces and crown your kings.'],
+ ['Snakes and Ladders','snakes-ladders','Classic','🎲','Race to square 100.'],
+ ['Hoop Shot','hoop-shot','Action','🏀','Shoot hoops and build a combo.'],
+ ['Mini Golf','mini-golf','Action','⛳','Putt through nine custom holes.'],
+ ['Helicopter','helicopter','Arcade','🚁','Fly through a narrowing cave.'],
+ ['Balloon Pop','balloon-pop','Arcade','🎈','Pop balloons and avoid bombs.'],
+ ['Simon Says','simon-says','Arcade','🎵','Repeat the growing light sequence.'],
+ ['Gomoku','gomoku','Classic','⚫','Get five in a row on the board.'],
+ ['Mancala','mancala','Classic','🫘','Sow seeds and capture your opponent’s pits.'],
+ ['Bowling','bowling','Action','🎳','Aim your throw and chase a perfect score.'],
+ ['Penalty Kick','penalty-kick','Action','⚽','Beat the keeper in a shootout.'],
+ // Two additional entries from the same publisher collection: included as extra playable choices.
+ ['Neon Pong','local:games/neon-pong.html','Arcade','🏓','Play a neon paddle duel against the computer.'],
+ ['Reflex Rush','local:games/reflex-rush.html','Action','⚡','Test your reaction speed in a quick challenge.']
+].map(([title,slug,category,emoji,description],index)=>({title,slug,category,emoji,description,index}));
 
-const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => (
-  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]
-));
-
-function imageUrl(game) {
-  return game.id ? `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${game.id}/header.jpg` : '';
+const grid=document.getElementById('gameGrid');
+const search=document.getElementById('search');
+const count=document.getElementById('count');
+const empty=document.getElementById('emptyState');
+const resultLabel=document.getElementById('resultLabel');
+const sort=document.getElementById('sort');
+let activeCategory='All';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function urlFor(game){if(game.slug.startsWith('local:'))return game.slug.slice(6);return `${GAME_BASE}${game.slug}/`;}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ let filtered=games.filter(g=>(activeCategory==='All'||g.category===activeCategory)&&(`${g.title} ${g.category} ${g.description}`.toLowerCase().includes(q)));
+ if(sort.value==='az')filtered.sort((a,b)=>a.title.localeCompare(b.title));else filtered.sort((a,b)=>a.index-b.index);
+ count.textContent=filtered.length;resultLabel.textContent=`Showing ${filtered.length} of ${games.length} games`;empty.hidden=filtered.length>0;
+ grid.innerHTML=filtered.map((g,i)=>`<article class="game-card" style="animation-delay:${Math.min(i*12,180)}ms"><div class="cover-wrap"><span class="game-number">EF49 · ${String(g.index+1).padStart(2,'0')}</span><span class="game-emoji" aria-hidden="true">${g.emoji}</span><span class="genre-pill">${esc(g.category)}</span></div><div class="card-info"><h3 class="card-title" title="${esc(g.title)}">${esc(g.title)}</h3><p class="card-desc">${esc(g.description)}</p><a class="play-button" href="${urlFor(g)}" target="_blank" rel="noopener noreferrer" aria-label="Play ${esc(g.title)} in a new tab">▶ &nbsp; PLAY NOW</a></div></article>`).join('');
 }
-function gameUrl(game) {
-  return game.id ? `https://store.steampowered.com/app/${game.id}/` : 'https://www.minecraft.net/';
-}
-
-/* Genres and counts are built from the game list, so the filters, the
-   hero stats and the library can never disagree with each other. */
-const genreCounts = games.reduce((totals, game) => {
-  totals[game.genre] = (totals[game.genre] || 0) + 1;
-  return totals;
-}, {});
-const genres = Object.keys(genreCounts).sort((a, b) => genreCounts[b] - genreCounts[a] || a.localeCompare(b));
-
-function buildFilters() {
-  const button = (genre, label, total, active) =>
-    `<button type="button" class="filter${active ? ' active' : ''}" data-genre="${escapeHtml(genre)}" aria-pressed="${active}">${escapeHtml(label)} <small>${total}</small></button>`;
-  filtersEl.innerHTML = button('All', 'All games', games.length, true) +
-    genres.map(genre => button(genre, genre, genreCounts[genre], false)).join('');
-}
-
-function syncFilterButtons() {
-  document.querySelectorAll('.filter').forEach(item => {
-    const isActive = item.dataset.genre === activeGenre;
-    item.classList.toggle('active', isActive);
-    item.setAttribute('aria-pressed', String(isActive));
-  });
-}
-
-function renderGames() {
-  const query = search.value.trim().toLowerCase();
-  const filtered = games.filter(game => (activeGenre === 'All' || game.genre === activeGenre) &&
-    (game.title.toLowerCase().includes(query) || game.genre.toLowerCase().includes(query)));
-  count.textContent = filtered.length;
-  emptyState.hidden = filtered.length > 0;
-  if (!filtered.length) {
-    emptyMessage.textContent = query
-      ? `No games found for “${search.value.trim()}”${activeGenre === 'All' ? '' : ` in ${activeGenre}`}.`
-      : `No games found in ${activeGenre}.`;
-  }
-  grid.innerHTML = filtered.map((game, index) => {
-    const img = imageUrl(game);
-    const title = escapeHtml(game.title);
-    const genre = escapeHtml(game.genre);
-    // Games without artwork (e.g. Minecraft) start with the title-card fallback.
-    return `<article class="game-card${img ? '' : ' no-image'}" style="animation-delay:${Math.min(index * 15, 250)}ms">
-      <div class="cover-wrap">
-        ${img ? `<img class="cover" loading="lazy" decoding="async" width="460" height="215" referrerpolicy="no-referrer" src="${img}" alt="${title} cover art">` : ''}
-        <div class="cover-fallback">${title}</div>
-        <span class="genre-pill">${genre}</span>
-      </div>
-      <div class="card-info"><h3 class="card-title">${title}</h3>
-        <div class="card-bottom"><span>EF49 PICK</span><a href="${gameUrl(game)}" target="_blank" rel="noopener noreferrer" aria-label="View ${title} (opens in a new tab)">VIEW GAME ↗</a></div>
-      </div>
-    </article>`;
-  }).join('');
-}
-
-/* If a cover image fails to load (Steam CDN down, blocked, offline),
-   swap it for the title card. 'error' doesn't bubble, so listen in the capture phase. */
-grid.addEventListener('error', event => {
-  const img = event.target;
-  if (img.classList && img.classList.contains('cover')) {
-    img.closest('.game-card').classList.add('no-image');
-  }
-}, true);
-
-filtersEl.addEventListener('click', event => {
-  const button = event.target.closest('button[data-genre]');
-  if (!button) return;
-  activeGenre = button.dataset.genre;
-  syncFilterButtons();
-  renderGames();
-});
-search.addEventListener('input', renderGames);
-document.getElementById('clearFilters').addEventListener('click', () => {
-  search.value = '';
-  activeGenre = 'All';
-  syncFilterButtons();
-  renderGames();
-  search.focus();
-});
-
-document.getElementById('statGames').textContent = games.length;
-document.getElementById('statGenres').textContent = genres.length;
-document.getElementById('year').textContent = new Date().getFullYear();
-buildFilters();
-renderGames();
+document.querySelectorAll('.category').forEach(button=>button.addEventListener('click',()=>{activeCategory=button.dataset.category;document.querySelectorAll('.category').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});render();document.getElementById('games').scrollIntoView({behavior:'smooth',block:'start'});}));
+search.addEventListener('input',render);sort.addEventListener('change',render);document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('statCategories').textContent=new Set(games.map(g=>g.category)).size;render();

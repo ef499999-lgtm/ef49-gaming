@@ -51,7 +51,11 @@ const games = [
  ['Penalty Kick','penalty-kick','Action','⚽','Beat the keeper in a shootout.'],
  // Two additional entries from the same publisher collection: included as extra playable choices.
  ['Neon Pong','local:games/neon-pong.html','Arcade','🏓','Play a neon paddle duel against the computer.'],
- ['Reflex Rush','local:games/reflex-rush.html','Action','⚡','Test your reaction speed in a quick challenge.']
+ ['Reflex Rush','local:games/reflex-rush.html','Action','⚡','Test your reaction speed in a quick challenge.'],
+ ['Neon Lane Runner','local:games/neon-runner.html','Action','🏃','A fast 3-lane endless runner with swipes, jumps, slides and coins.'],
+ ['Fruit Tap','local:games/fruit-tap.html','Arcade','🍓','Tap the falling fruit before it hits the ground.'],
+ ['Orbit Dodge','local:games/orbit-dodge.html','Action','🪐','Move around the orbit and dodge incoming space rocks.'],
+ ['Pocket Basketball','local:games/pocket-basketball.html','Sports','🏀','Swipe or tap to shoot hoops on your phone or computer.']
 ].map(([title,slug,category,emoji,description],index)=>({title,slug,category,emoji,description,index}));
 
 const grid=document.getElementById('gameGrid');

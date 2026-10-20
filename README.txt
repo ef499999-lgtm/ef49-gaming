@@ -20,3 +20,5 @@ GAME SOURCES
 The 48 externally hosted games link to individual games in the public HTML5 collection at https://mashukui.github.io/web-games/ . Its source repository is https://github.com/mashukui/web-games and the repository declares an MIT license. These games open on the publisher's website in a new tab; EF49 does not copy or redistribute their game code. The remaining two entries are original lightweight mini-games included locally in this package (Neon Pong and Reflex Rush).
 
 This package changes files in the downloaded package only; it does not push changes to GitHub automatically. Keep any upstream attribution/license notices if you later copy third-party source into this repository.
+
+New phone-friendly local games: Neon Lane Runner (swipe runner), Fruit Tap, Orbit Dodge, and Pocket Basketball. These are original mini-games inspired by common arcade mechanics; they are not official Subway Surfers or other branded game ports.
